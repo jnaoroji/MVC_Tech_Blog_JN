@@ -1,17 +1,18 @@
 [
   {
-    "name": "Music Near Me",
-    "description": "A mobile app that will send you notifications whenever a concert is playing in your area.",
-    "needed_funding": 5000
+    "title": "Why MVC is so Important",
+    "description": "MVC allows developers to maintain true separation of concerns, devising their code between the Model layer for data, the View layer for design, and the Controller layer for application logic.",
+    "date_created": "2023-02-03T15:05:00.234Z",
+    "user": {
+      "id": 3
+    }
   },
   {
-    "name": "The Ultimate Tech Quiz",
-    "description": "A web app that will give users 10 new technical questions each day and track their progress in things like programming, cybersecurity, database architecture, and more!",
-    "needed_funding": 10000
-  },
-  {
-    "name": "Roll 'Em Up",
-    "description": "A game for Windows and macOS where players move a ball through a series of increasingly challenging mazes.",
-    "needed_funding": 800
+    "title": "Authentication vs. Authorization",
+    "description": "There is a difference between Authentication and Autherization. Authentication means confirming your own identity, whereas Authorization means being allowed to access the system.",
+    "date_created": "2023-02-06T15:05:00.234Z",
+    "user": {
+      "id": 2
+    }
   }
 ]
