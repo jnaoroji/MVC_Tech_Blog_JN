@@ -40,5 +40,5 @@
 //   };
 
 
-document.querySelector('.comment-button')
-addEventListener('click', commentButtonHandler);
+// document.querySelector('.comment-button')
+// addEventListener('click', commentButtonHandler);
