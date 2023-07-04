@@ -4,38 +4,21 @@
 
     <form class="form edit-project-form">
       <div class="form-group">
-        <label for="project-name">Blog Title *</label>
-        <input class="form-input" type="text" id="project-name" name="project-name" />
+        <label for="project-name">Blog Title </label>
+        <input required class="form-input" type="text" id="project-name" name="project-name" value="{{post.title}}" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description *</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
+        <label for="project-desc">description</label>
+        <textarea required class="form-input" id="project-desc" name="project-desc">{{post.description}}</textarea>
       </div>
-      <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+      <div class="form-group flex flex-col sm:flex-row">
+        <button type="submit" class="rounded-md bg-emerald-700 p-4 py-2 text-neutral-50 mr-2" id="post-button">Update Post</button>
+        <button type="submit" class="rounded-md bg-emerald-700 p-4 py-2 text-neutral-50" id="delete-button" >Delete</button>
+        <a href="/profile" class="text-center block rounded-md p-4 py-2" id="cancel-button">Cancel</button>
       </div>
     </form>
   </div>
-
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
-
-    {{#each posts as |post|}}
-    <div class="row mb-2">
-      <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{post.title}}</a></h4>
-      </div>
-      <div class="col-md-4">
-        <button class="btn btn-sm btn-danger delete-button" data-id="{{post.id}}">Delete</button>
-      </div>
-      <div>
-					<a href="/post/{{post.id}}" class="block rounded-md p-4 py-2">Edit</a>
-			</div>
-    </div>
-    {{/each}}
-  </div>
-  {{/if}}
 </div>
+
 <script src="./js/profile.js"></script>
 <script src="./js/edit-post.js"></script>
