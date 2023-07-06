@@ -1,4 +1,5 @@
-const newFormHandler = async (event) => {
+document.getElementById('new-project-form').onsubmit = async (event) => {
+// const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#project-name').value.trim();
@@ -37,9 +38,9 @@ const delButtonHandler = async (event) => {
   }
 };
 
-document
-  .querySelector('.new-project-form')
-  .addEventListener('submit', newFormHandler);
+// document
+//   .getElementById('.new-project-form')
+//   .addEventListener('click', newFormHandler);
 
 document
   .querySelector('.project-list')

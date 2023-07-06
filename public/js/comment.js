@@ -1,26 +1,27 @@
 const commentFormHandler = async (event) => {
     event.preventDefault();
-  
-    const description = document.querySelector('#project-desc').value.trim();
+    console.log('Click');
+    const description = document.querySelector('#comment-desc').value.trim();
+    const postId = document.querySelector('#comment-button').getAttribute('data-id');
 
     if (description) {
-      console.log(description);
+      console.log(description, postId);
       const response = await fetch('/api/comments', {
         method: 'POST',
-        body: JSON.stringify({ description, user_id ,date_created }),
+        body: JSON.stringify({ description, postId }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
         console.log("DONE!");
       } else {
-        alert(response.statusText);
+        alert(' Failed to comment');
       }
     }
-  };
+};
 
   
   document
-    .querySelector('.comment-form')
-    .addEventListener('submit', commentFormHandler);
+    .querySelector('#comment-button')
+    .addEventListener('click', commentFormHandler);
   

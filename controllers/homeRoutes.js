@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Post } = require('../models');
+const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 //gets all existing listings for homepage
@@ -70,11 +70,15 @@ router.get('/post/:id', async (req, res) => {
           model: User,
           attributes: ['name'],
         },
+        {
+          model:Comment, include:[{model:User}]
+        },
       ],
+
     });
 
     const post = postData.get({ plain: true });
-
+    console.log(post);
     res.render('post', {
       ...post,
       logged_in: req.session.logged_in

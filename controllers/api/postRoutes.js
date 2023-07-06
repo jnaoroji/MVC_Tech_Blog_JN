@@ -20,11 +20,11 @@ router.post('/', withAuth, async (req, res) => {
 // Edit a post
 router.put('/:id', withAuth, async (req, res) => {
   try {
+    console.log(req.body, "update route hit");
     const results = await Post.update(
-      {
-        ...req.body,
-        user_id: req.session.user_id,
-      },
+    
+        req.body,
+      
       {
         where: {
           id: req.params.id,
@@ -32,11 +32,8 @@ router.put('/:id', withAuth, async (req, res) => {
       }
     );
 
-    if (results.affectedRows > 0) {
-      res.status(200).json(newPost);
-    } else {
-      res.status(404).json('Not Found');
-    }
+      res.status(200).json(results);
+      
   } catch (err) {
     res.status(400).json(err);
   }

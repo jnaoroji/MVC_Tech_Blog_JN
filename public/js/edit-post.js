@@ -1,12 +1,12 @@
-document.getElementById('edit-project-form').onsubmit = async (event) => {
+const updatePost = async (event) => {
   event.preventDefault();
-
-  const postId = document.location.pathname.split('/')[2];
-
+  console.log('click');
+  const postId = event.target.getAttribute('data-id');
+  console.log(postId);
   const title = document.getElementById('project-name').value;
   const description = document.getElementById('project-desc').value;
 
-  await fetch(`/api/profile/${postId}`, {
+  const response = await fetch(`/api/posts/${postId}`, {
     method: 'PUT',
     body: JSON.stringify({
       title,
@@ -14,8 +14,13 @@ document.getElementById('edit-project-form').onsubmit = async (event) => {
     }),
     headers: { 'Content-Type': 'application/json' },
   });
-
-  document.location.replace('/profile');
+  
+  if (response.ok) {
+    document.location.replace('/profile'); 
+  } else {
+    alert('Failed to update Blog Post');
+  }
 
 };
 
+document.querySelector('#post-button').addEventListener('click', updatePost);
