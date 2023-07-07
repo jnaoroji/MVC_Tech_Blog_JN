@@ -33,10 +33,8 @@
         <h4><a href="/post/{{post.id}}">{{post.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger delete-button" data-id={{post.id}}>Delete</button>
-      </div>
-      <div>
-					<a href="/edit-post/{{post.id}}"  class="block rounded-md p-4 py-2 edit-button">Edit</a>
+        <a href="/edit-post/{{post.id}}" class="btn btn-sm btn-light edit-button"role="button">Edit</a>
+        <button class="btn btn-sm btn-secondary delete-button" data-id={{post.id}}>Delete</button>
 			</div>
     </div>
     {{/each}}

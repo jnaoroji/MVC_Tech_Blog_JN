@@ -1,31 +1,32 @@
-<div class="text-center">
+<section class="text-center">
+  <div class="container my-5 py-5">
   <h2>{{title}}</h2>
   <p>{{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-</div>
+  </div>
+</section>
+
 {{!-- create comment form --}}
-  <div id="comment-form">
-   <div class="comment">
-      <div>
-        <label for="comment-container">Leave a Comment!</label>
-        <input class="input" type="text" id="comment-desc"/>
-      <div class="form-group">
-        <button class="btn btn-primary" id="comment-button" data-id={{id}}>Submit</button>
-      </div>
-      </div>
+<section class="text-center">
+<div id="comment-form" style="flex">
+  <div class="comment">
+    <label for="comment-container">Leave a Comment!</label>
+    <input class="input" type="text" id="comment-desc"/>
+   <button class="btn btn-primary" id="comment-button" data-id={{id}}>Submit</button>
   </div>
 </div>
-{{log comments}}
 {{#if comments}}
-{{log post.comments}}
 {{#each comments}}
-<div>
-  {{description}}
-  <div>
-    {{user.name}}
-  </div>
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h6 class="text-primary fw-bold mb-0">
+    By: {{user.name}} 
+    <span class="text-dark ms-2">{{description}}</span>
+    on {{format_date date_created}}
+  </h6>
 </div>
 {{/each}}
 {{/if}}
+</section>
+
 
 <script src="/js/comment.js"></script>
