@@ -1,19 +1,19 @@
 <div class="row mt-4">
   <div class="col-md-6">
-    <h3>Edit your Blog Post</h3>
+    <h4>Update your Blog Post</h4>
 
-    <form class="form" id="edit-project-form">
+    <form class="form text" id="edit-project-form">
       <div class="form-group">
-        <label for="project-name">Blog Title </label>
+        <label for="project-name">Blog Title</label>
         <input required class="form-input" type="text" id="project-name" name="project-name" value="{{post.title}}" />
       </div>
       <div class="form-group">
-        <label for="project-desc">description</label>
+        <label for="project-desc">Blog Contents</label>
         <textarea required class="form-input" id="project-desc" name="project-desc">{{post.description}}</textarea>
       </div>
       <div class="form-group flex flex-row sm:flex-row">
-        <button class="rounded-md bg-emerald-700 p-4 py-2 text-neutral-50 mr-2" id="post-button"data-id={{post.id}}>Update Post</button>
-        <button class="rounded-md bg-emerald-700 p-4 py-2 text-neutral-50" id="delete-button" >Delete</button>
+        <button class="btn btn-sm btn-secondary p-4 py-2 text-neutral-50 mr-2" id="post-button"data-id={{post.id}}>Update Post</button>
+        <button class="btn btn-sm btn-secondary p-4 py-2 text-neutral-50" id="delete-button" >Delete</button>
         <a href="/profile" class="text-center block rounded-md p-4 py-2" id="cancel-button">Cancel</button>
       </div>
     </form>
