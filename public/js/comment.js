@@ -13,18 +13,13 @@ const commentFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        const newComment = await response.json();
-        console.log("DONE!");
+       // Refresh the page
+      location.reload();
 
-        // Update the DOM with the new comment
-        // const commentContainer = document.querySelector('#comment-container');
-        // const commentElement = document.createElement('p');
-        // commentElement.textContent = newComment.description;
-        // commentContainer.appendChild(commentElement);
-      } else {
-        alert(' Failed to comment');
-      }
+    } else {
+      alert('Failed to comment');
     }
+  }
 };
 
   
