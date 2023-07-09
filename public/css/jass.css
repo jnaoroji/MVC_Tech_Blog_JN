@@ -23,7 +23,7 @@ body {
 footer{
   position:fixed;
   bottom:0;
-  left: 25%;
+  left:80% ;
 }
 /**
  * Render the `main` element consistently in IE.
