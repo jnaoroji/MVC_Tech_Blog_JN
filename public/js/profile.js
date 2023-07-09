@@ -1,5 +1,5 @@
+//creates a new blog post
 document.getElementById('new-project-form').onsubmit = async (event) => {
-// const newFormHandler = async (event) => {
   event.preventDefault();
 
   const title = document.querySelector('#project-name').value.trim();
@@ -22,7 +22,9 @@ document.getElementById('new-project-form').onsubmit = async (event) => {
   }
 };
 
-const delButtonHandler = async (event) => {
+//deletes an exisiting blog post
+document.getElementById('delete-button').onclick = async (event) => {
+  event.preventDefault();
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
 
@@ -38,11 +40,3 @@ const delButtonHandler = async (event) => {
   }
 };
 
-// document
-//   .getElementById('.new-project-form')
-//   .addEventListener('click', newFormHandler);
-
-document
-  .querySelector('.project-list')
-  .addEventListener('click', delButtonHandler);
-  

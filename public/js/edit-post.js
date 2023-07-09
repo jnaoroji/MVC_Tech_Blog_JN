@@ -1,8 +1,6 @@
 const updatePost = async (event) => {
   event.preventDefault();
-  console.log('click');
   const postId = event.target.getAttribute('data-id');
-  console.log(postId);
   const title = document.getElementById('project-name').value;
   const description = document.getElementById('project-desc').value;
 
@@ -23,4 +21,23 @@ const updatePost = async (event) => {
 
 };
 
+const deletePost = async (event) => {
+  //deletes an exisiting blog post
+  event.preventDefault();
+  if (event.target.hasAttribute('data-id')) {
+    const id = event.target.getAttribute('data-id');
+
+    const response = await fetch(`/api/posts/${id}`, {
+      method: 'DELETE',
+    });
+
+    if (response.ok) {
+      document.location.replace('/profile');
+    } else {
+      alert('Failed to delete Blog Post');
+    }
+  }
+};
+
 document.querySelector('#post-button').addEventListener('click', updatePost);
+document.querySelector('#delete-button').addEventListener('click', deletePost);
