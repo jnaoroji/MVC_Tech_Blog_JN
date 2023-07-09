@@ -20,7 +20,11 @@ html {
 body {
   margin: 0;
 }
-
+footer{
+  position:fixed;
+  bottom:0;
+  left: 25%;
+}
 /**
  * Render the `main` element consistently in IE.
  */
