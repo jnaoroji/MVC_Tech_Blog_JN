@@ -23,10 +23,15 @@ document.getElementById('new-project-form').onsubmit = async (event) => {
 };
 
 //deletes an exisiting blog post
-document.getElementById('delete-button').onclick = async (event) => {
-  event.preventDefault();
-  if (event.target.hasAttribute('data-id')) {
-    const id = event.target.getAttribute('data-id');
+
+const deleteButtons = document.querySelectorAll('.delete-button');
+
+deleteButtons.forEach((button) => {
+  button.addEventListener('click', async (event) => {
+    console.log('click!');
+    event.preventDefault();
+    
+    const id = button.getAttribute('data-id');
 
     const response = await fetch(`/api/posts/${id}`, {
       method: 'DELETE',
@@ -37,6 +42,6 @@ document.getElementById('delete-button').onclick = async (event) => {
     } else {
       alert('Failed to delete Blog Post');
     }
-  }
-};
+  });
+});
 
