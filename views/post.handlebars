@@ -5,14 +5,13 @@
   <p class="text-link">Created by {{user.name}} on {{format_date date_created}}</p>
   </div>
 </section>
-
 {{!-- create comment form --}}
 <section class="text-center">
 <div id="comment-container" style="flex">
   <div class="comment">
     <label for="comment-container">Leave a Comment!</label>
     <input class="input" type="text" id="comment-desc"/>
-   <button class="btn btn-primary" id="comment-button" data-id={{id}}>Submit</button>
+   <button class="btn btn-sm btn-primary" id="comment-button" data-id={{id}}>Submit</button>
   </div>
 </div>
 {{#if comments}}
